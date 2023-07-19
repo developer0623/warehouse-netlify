@@ -9,7 +9,7 @@
     "start": "ng serve",
     "build": "ng build",
     "serve:pwa": "ng serve --configuration=pwa --host localhost.amscontrols.com",
-    "build:pwa": "ng build --configuration=pwa",
+    "build:pwa": "ng build --configuration=pwa --base-href=/app/warehouse/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
