@@ -1,0 +1,89 @@
+ion-content {
+  width: 100vw;
+}
+	.scroll-content {
+		background: #ddd !important;
+	}
+
+
+	.deliver-item-age {
+		width: 100%;
+		height: 25vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		// color: rgb(208, 2, 27);
+		background: white;
+		// font-size: 60px;
+		margin-bottom: 20px;
+
+		.deliver-time-value {
+			font-size: 3rem;
+			// font-weight: bold;
+			.late-by {
+				color: #a31d21;
+				font-size: 1.5rem;
+				margin: 0 5px;
+				font-style: italic;
+			}
+			.red-color {
+				color: #a31d21;
+			}
+			.date-sign {
+				font-size: 1.5rem;
+				margin: 0 5px;
+				// font-weight: 300;
+			}
+		}
+
+		.deliver-item-state {
+			position: absolute;
+			right: 10vw;
+			bottom: 3vh;
+			font-size: 2.5rem;
+			color: rgba(0, 0, 0, 0.6);
+			font-style: italic;
+
+		}
+	}
+
+	app-deliver-item {
+		width: 94%;
+		margin-left: 3%;
+	}
+
+	.delivery-content {
+		margin-top: 10px;
+
+		width: 230px;
+		display: block;
+		margin: 10px auto 0;
+
+		.deliver-position-title {
+			margin-bottom: 10px;
+			ion-col{
+				font-size: 16px;
+				background-color: #ddd;
+			}
+
+		}
+
+		.deliver-position-content {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 25px;
+			letter-spacing: 1px;
+			background-color: rgba(99, 157, 52, 0.31);
+			padding: 5px 0px;
+			color: var(--ion-color-new-gray);
+		}
+
+		img {
+			width: 30px;
+			height: 30px;
+			margin-right: 20px;
+		}
+	}
+

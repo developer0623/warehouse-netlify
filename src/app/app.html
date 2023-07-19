@@ -1,0 +1,85 @@
+<ion-menu class="manin-menu" side="start" menuId="first" contentId="main">
+
+  <ion-content>
+  	<div class="menu-logo" menuClose>
+		<img src="assets/images/logo.png" />
+		<div class="logo-content">
+			<p class="logo-title1">ECLIPSE PRO</p>
+			<p class="logo-title2">MATERIAL HANDLING</p>
+		</div>
+    </div>
+    <div class="menu-title">
+    	Info
+    </div>
+    <div class="menu-content" (click)="gotoCoilsPage()">
+    	All Coils
+    </div>
+    <div class="menu-title">
+    	USER
+    </div>
+    <div class="menu-content">
+    	{{userName}}
+    </div>
+
+    <div class="menu-title">
+    	TRANSFER TYPE
+    </div>
+    <div class="menu-content">
+    	SHOW:
+    	<ion-segment [(ngModel)] = "selectedTransferType" (ionChange)="segmentChanged($event)" class="transfer-segment">
+		    <ion-segment-button value="{{type.id}}" *ngFor="let type of transferTypes">
+		      {{type.title}}
+		    </ion-segment-button>
+
+		  </ion-segment>
+    </div>
+
+    <div class="menu-title">
+    	ADVANCED FILTERS
+    </div>
+
+    <div class="menu-content">
+    	SHOW ONLY TRANSFERS CONTAINING:
+		</div>
+
+	<ion-list class="main-filter-array">
+    <ion-accordion-group [multiple]="true">
+      <ion-accordion value="{{filter.title}}" *ngFor="let filter of sideMenuFilters; let ii = index;">
+        <ion-item slot="header" color="light">
+          <ion-label>{{filter.title}}</ion-label>
+        </ion-item>
+        <ion-list class="ion-padding" slot="content" >
+          <div class="filter-item" *ngFor="let item of filter.filters; let i = index;" (click)="onClickFilterItem(item, ii, i)">
+            <img src="assets/images/checked.png" class="check-icon" *ngIf="item.checked">
+            <img src="assets/images/non-checked.png" class="check-icon" *ngIf="!item.checked">
+            <p class="item-title">{{item.title}}</p>
+          </div>
+        </ion-list>
+      </ion-accordion>
+    </ion-accordion-group>
+		<!-- <div class="filter-item-group" *ngFor="let filter of sideMenuFilters; let ii = index;">
+			<ion-item (click)="onClickFilter(ii)">
+
+				<p class="filter-title">{{filter.title}}</p>
+
+				<ion-icon name="chevron-down" item-right *ngIf="!tabs[ii]"></ion-icon>
+				<ion-icon name="chevron-up" item-right *ngIf="tabs[ii]"></ion-icon>
+			</ion-item>
+			<ion-list class="filter-item-list" *ngIf="tabs[ii]">
+				<div class="filter-item" *ngFor="let item of filter.filters; let i = index;" (click)="onClickFilterItem(item, ii, i)">
+					<img src="assets/images/checked.png" class="check-icon" *ngIf="item.checked">
+					<img src="assets/images/non-checked.png" class="check-icon" *ngIf="!item.checked">
+					<p class="item-title">{{item.title}}</p>
+				</div>
+
+
+			</ion-list>
+		</div> -->
+	</ion-list>
+
+	<div class="logout-button" (click)="logout()" menuClose>Log Out</div>
+  </ion-content>
+
+</ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>

@@ -1,0 +1,36 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goback()">
+        <ion-icon slot="start" size="large" name="chevron-back" class="main-back-icon"></ion-icon>
+        Back
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Coil Detail</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+	<div class="action-div" [hidden]="dropdownFlag">
+		<ion-list class="dropdown-list">
+		     <ion-item *ngFor="let action of dropDownActions" (click)="onAction(action)">{{action.title}}</ion-item>
+		</ion-list>
+		<div class="back-div" (click)="onClickDropdown()"></div>
+	</div>
+	<div class="main-div">
+		<ion-row class="coil-header">
+			<ion-col size="auto" class="coil-image">
+				<img src="assets/taskicons/fill.png" class="main-img" />
+				<img src="assets/taskicons/alert.png" class="alert-img" *ngIf="!preferFlag"/>
+				<span>COIL</span>
+			</ion-col>
+			<ion-col size="auto" class="coil-id-title">ID:</ion-col>
+			<ion-col class="coil-id-content">{{selectedCoil.id}}</ion-col>
+		</ion-row>
+
+		<app-coil-detail-item [selectedCoil]="selectedCoil"></app-coil-detail-item>
+	</div>
+
+</ion-content>

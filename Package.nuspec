@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Eclipse.Warehouse.WebUI</id>
+    <title>AMS Eclipse Warehouse Web UI</title>
+    <version>$version$</version>
+    <authors>Ricky Allman, Josh Buedel, Lionel</authors>
+    <owners>AMS Controls</owners>
+    <summary>The Warehouse application, built for web deployment.</summary>
+    <description>The entire Warehouse application is built, minimized, and wrapped up into a single zip file. This is intended for easy integration with Eclipse Pro.</description>
+    <projectUrl>https://github.com/amscontrols/EclipsePro-Warehouse</projectUrl>
+    <tags>ams</tags>
+    <copyright>Copyright 2018</copyright>
+    <licenseUrl>https://www.amscontrols.com/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>http://www.amscontrols.com/wp-content/uploads/2017/09/AMS-Square-triangle-only.png</iconUrl>
+    <releaseNotes></releaseNotes>
+    <dependencies>
+
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Warehouse.zip" target="apps\Warehouse.zip" />
+  </files>
+</package>

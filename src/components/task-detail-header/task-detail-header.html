@@ -1,0 +1,27 @@
+<div class="task-detail-header">
+	<ion-row>
+		<ion-col col-auto class="header-locate">Locate:</ion-col>
+		<ion-col></ion-col>
+		<!-- <ion-col col-auto>{{task.requiredDate | testTimeAgo}}</ion-col> -->
+		<ion-col col-auto class="time-ago" [innerHtml]="task.requiredDate | customTimeAgo"></ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col offset-2 col-auto class="header-type">
+			COIL TYPE
+		</ion-col>
+		<ion-col col-auto class="header-img">
+			<img src="assets/taskicons/fill.png" class="item-img" />
+		</ion-col>
+		<ion-col col-auto class="header-title">{{task.coilType.coilTypeCode}}</ion-col>
+		<ion-col></ion-col>
+	</ion-row>
+	<ion-row class="header-content-row">
+		<ion-col col-auto class="header-size">
+			<p class="header-material">{{task.coilType.materialType}}</p>
+			<p class="header-color">{{task.coilType.color}}</p>
+		</ion-col>
+		<ion-col col class="header-coiltype-gaurage">{{task.coilType.gauge}}<span>G</span></ion-col>
+		<ion-col col class="header-coiltype-width">W&nbsp;&nbsp;{{task.coilType.widthIn}}</ion-col>
+		<ion-col col-auto class="header-requiredft"><span>L</span>{{task.requiredFt | round}}</ion-col>
+	</ion-row>
+</div>

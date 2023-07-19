@@ -1,0 +1,41 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goback()">
+        <ion-icon slot="start" size="large" name="chevron-back" class="main-back-icon"></ion-icon>
+        Task List
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="gotoCancel()">
+        Cancel<br/>
+	      Task
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Deliver</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="deliver-item-age">
+		<div class="deliver-time-value" [innerHtml]="selectedTask.requiredDate | drTime"></div>
+		<div class="deliver-item-state">In Transit</div>
+	</div>
+
+	<app-deliver-item [item]="selectedItem | async"></app-deliver-item>
+	<div class="delivery-content">
+		<ion-row class="deliver-position-title">
+			<ion-col size="auto">DELIVER TO:</ion-col>
+
+		</ion-row>
+		<ion-row class="deliver-position-content">
+			<img src="assets/taskicons/machine.png" class="item-img" />
+			{{destination}}
+		</ion-row>
+	</div>
+	<div class="list-footer" (click)="delivered()">
+		MARK AS DELIVERED
+	</div>
+
+</ion-content>

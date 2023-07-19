@@ -1,0 +1,65 @@
+
+	.task-item {
+		width: 100%;
+		display: flex;
+		height: 38px;
+		position: relative;
+		font-size: 11px;
+
+		.arrow-sub-item {
+			position: absolute;
+			bottom:auto;
+			left: 40%;
+			border-width:19px 0 19px 19px;
+  			border-color:transparent var(--ion-color-new-zone);
+			border-style:solid;
+
+			display:block;
+			width:0;
+		}
+		// padding: 5px;
+		.sub-item1 {
+			float: left;
+			display: flex;
+			align-items: center;
+			width: 40%;
+			flex: none;
+			background-color: var(--ion-color-new-zone);
+			height: 100%;
+			padding-left: 5px;
+			border-radius: 4px 0 0 0;
+
+			img {
+				width: 22px;
+				height: 22px;
+				margin-right: 5px;
+			}
+		}
+		.sub-item2 {
+			float: left;
+			padding-left: 30px;
+			display: flex;
+			align-items: center;
+			// width: 42%;
+			flex: 1;
+			background-color: var(--ion-color-new-zone)2;
+			height: 100%;
+
+			img {
+				width: 22px;
+				height: 22px;
+				margin-right: 5px;
+			}
+		}
+		.sub-item3 {
+			float: right;
+			height: 100%;
+			display: flex;
+			// width: 16%;
+			width: 73px;
+			justify-content: center;
+			align-items: center;
+			background-color: #CBCBCB;
+			border-radius: 0 4px 0 0;
+		}
+	}

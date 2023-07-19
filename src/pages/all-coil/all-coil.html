@@ -1,0 +1,50 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="main-back-button" (click)="goback()">
+        <ion-icon slot="start" size="large" name="chevron-back" class="main-back-icon"></ion-icon>
+        Back
+      </ion-button>
+    </ion-buttons>
+    <ion-title>All Coils</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-task-detail-header
+    [task]="seletedTask"
+    *ngIf="taskFlag"
+  ></app-task-detail-header>
+
+  <ion-row class="filter-row">
+    <ion-searchbar
+      [debounce]="300"
+      show-clear-button="never"
+      (ionInput)="onInput($event)"
+    >
+    </ion-searchbar>
+    <div class="filter-button" (click)="gotoFilter()">
+      FILTER <span *ngIf="filterCount">{{filterCount}}</span>
+    </div>
+  </ion-row>
+
+  <ion-list class="task-prefredcoil-list">
+    <ion-row
+      class="task-prefredcoil-row"
+      *ngFor="let coil of showedCoils"
+      (click)="gotoDetail(coil)"
+    >
+      <app-task-detail-item [coil]="coil" [errorFlag]="coil.errorFlag" [preferFlag]="true"></app-task-detail-item>
+    </ion-row>
+  </ion-list>
+
+  <ion-infinite-scroll
+    (ionInfinite)="doInfinite($event)"
+    *ngIf="secondCount<lastCount"
+  >
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <p class="no-coil" *ngIf="!showedCoils.length">No coils match the filter</p>
+</ion-content>

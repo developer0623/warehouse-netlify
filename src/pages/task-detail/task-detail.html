@@ -1,0 +1,64 @@
+<ion-header no-border>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goback()">
+        <ion-icon slot="start" size="large" name="chevron-back" class="main-back-icon"></ion-icon>
+        Cancel
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onClickDropdown()">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Find Coil</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<app-task-detail-header [task]="seletedTask"></app-task-detail-header>
+
+	<ion-row class="list-header">SELECT COIL BELOW OR SCAN</ion-row>
+
+	<ion-list class="task-prefredcoil-list">
+		<ion-row class="task-prefredcoil-row" *ngFor="let coil of preferedCoils" (click)="gotoDetail(coil)">
+			<app-task-detail-item [coil]="coil" [preferFlag]="true"></app-task-detail-item>
+		</ion-row>
+	</ion-list>
+
+	<div class="show-preferred-button" *ngIf="!nonPreferFlag" (click)="onClickAllCoils()">See all Possible Coils ({{nonPreferedCoils.length}})</div>
+
+	<ion-row class="non-prefered-list-header" *ngIf="nonPreferFlag" (click)="onClickAllCoils()">NONPREFERED COILS</ion-row>
+
+	<ion-list class="task-prefredcoil-list" *ngIf="nonPreferFlag">
+		<ion-row class="task-prefredcoil-row" *ngFor="let coil of nonPreferedCoils" (click)="gotoDetail(coil)">
+			<app-task-detail-item [coil]="coil" [preferFlag]="false"></app-task-detail-item>
+		</ion-row>
+	</ion-list>
+
+	<div class="delivery-content">
+		<ion-row class="deliver-position-title">
+			<ion-col col-auto>DELIVER TO:</ion-col>
+
+		</ion-row>
+		<ion-row class="deliver-position-content">
+			<img src="assets/taskicons/machine.png" class="item-img" />
+			{{seletedTask.destinationLocationId}}
+		</ion-row>
+	</div>
+
+	<div class="list-footer" (click)="gotoManual()">
+		MANUALLY ENTER ITEM
+	</div>
+
+  <!-- <div class="browse-coils-button" (click)="onFilter()">
+		<ion-icon name="search" class="search-icon"></ion-icon>
+	</div>
+
+	<div class="scan-coils-button" (click)="gotoScan()" *ngIf="!isPwa">
+		<img src="assets/taskicons/scan.png" />
+	</div> -->
+
+</ion-content>

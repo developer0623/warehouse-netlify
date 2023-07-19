@@ -1,0 +1,33 @@
+<ion-header no-border>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goback()">
+        <ion-icon slot="start" size="large" name="chevron-back" class="main-back-icon"></ion-icon>
+        Cancel
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Find Coil</ion-title>
+    <!-- <ion-buttons slot="primary">
+      <ion-button slot="start" class="scan-button">
+        <ion-img src="assets/taskicons/scan.png" class="scan-button_img"></ion-img>
+      </ion-button>
+    </ion-buttons> -->
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-task-detail-header [task]="seletedTask"></app-task-detail-header>
+
+  <div class="sub-item1">
+    <ion-img src="assets/taskicons/fill.png" class="sub-item1_img"/>
+    Coil ID
+  </div>
+
+  <ion-item class="coil-search">
+    <ion-input placeholder="Coil ID" [(ngModel)]="coilId"></ion-input>
+  </ion-item>
+
+  <button class="search-button" (click)="searchCoil()">FIND COIL</button>
+</ion-content>

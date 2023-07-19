@@ -1,0 +1,45 @@
+@import '../../theme/colors.scss';
+
+	.coil-header {
+		background-color: rgba(50, 50, 50, 0.3);
+
+		.coil-image {
+			display: flex;
+    		flex-direction: column;
+    		align-items: center;
+    		padding: 15px 10px;
+    		background-color: #4A4A4A;
+    		color: white;
+    		position: relative;
+			.main-img {
+				width: 30px;
+				height: 30px;
+				margin-right: 5px;
+			}
+
+			.alert-img {
+				position: absolute;
+				width: 17px;
+				height: 17px;
+				left: 28px;
+				top: 5px;
+			}
+		}
+
+		.coil-id-title {
+			max-width: 35px;
+			text-align: right;
+			font-size: 20px;
+			color: var(--ion-color-new-gray);
+
+		}
+
+		.coil-id-content {
+			display: flex;
+			align-items: center;
+			font-size: 30px;
+			font-weight: bold;
+			color: #555;
+		}
+	}
+

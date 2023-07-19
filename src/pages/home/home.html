@@ -1,0 +1,44 @@
+<ion-header no-border>
+  <!-- <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>All Tasks</ion-title>
+  </ion-toolbar> -->
+  <ion-toolbar>
+	  <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+	  	<!-- <button ion-button icon-only class="top-menu-icon" menuToggle>
+	      <ion-icon name="menu" size="large"></ion-icon>
+	    </button> -->
+	  </ion-buttons>
+
+    <ion-title>All Tasks</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+	<ion-item (click)="gotoProgress()" class="progress-task" *ngIf="progressFlag" detail="true" lines="none" detail-icon="arrow-forward">
+	    TASK IN PROGRESS
+	</ion-item>
+
+	<ion-list class="item-list">
+		<ion-card class="list-item" [ngClass]="{'border-color': currentTask && task.id === currentTask.id}" (click)="onClickTask(task)" *ngFor="let task of (visibleTasks$ | async)">
+			<app-task-item [task]="task"></app-task-item>
+			<app-task-bottom-item [task]="task"></app-task-bottom-item>
+		</ion-card>
+	</ion-list>
+
+	<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+	   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+	 </ion-infinite-scroll>
+
+	<!-- <div class="browse-coils-button" (click)="onFilter()">
+		<ion-icon name="search" class="search-icon"></ion-icon>
+	</div>
+
+	<div class="scan-coils-button" (click)="gotoScan()" *ngIf="!isPwa">
+		<img src="assets/taskicons/scan.png" />
+	</div> -->
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-list>
+	<ion-row class="coil-header">
+		<ion-col size="auto" class="coil-img">
+			<img src="assets/taskicons/fill.png" class="item-img" />
+			<img src="assets/taskicons/alert.png" class="alert-img" *ngIf="!preferFlag || errorFlag===1" />
+			<img src="assets/taskicons/error.png" class="alert-img" *ngIf="errorFlag===2" />
+		</ion-col>
+		<ion-col  class="coil-id">{{coil.id}}</ion-col>
+		<!-- <ion-col col-auto class="coil-date"><span>AGE</span>{{coil.dateIn | date : "M"}}<span>M</span></ion-col>
+		<ion-col col-auto class="coil-date">{{coil.dateIn | date : "d"}}<span>D</span></ion-col> -->
+		<ion-col size="auto" class="coil-date" [innerHtml]="coil.dateIn | coilage"></ion-col>
+	</ion-row>
+	<ion-row class="coil-type">
+		<ion-col size="auto" class="coil-type-code">{{coil.coilTypeCode}}</ion-col>
+		<ion-col size="auto" class="coil-type-material">{{coil.materialType}}</ion-col>
+		<ion-col size="auto" class="coil-type-color">{{coil.color}}</ion-col>
+
+	</ion-row>
+	<ion-row class="coil-size">
+		<ion-col size="auto" class="coil-location-img">
+			<img src="assets/taskicons/zone.png" class="item-img" />
+		</ion-col>
+		<ion-col  size="auto" class="coil-size-location">{{coil.location.name}}</ion-col>
+		<ion-col  class="coil-size-gauge">{{coil.gauge}}<span>G</span></ion-col>
+		<ion-col  class="coil-size-width">W&nbsp;&nbsp;{{coil.widthIn}}"</ion-col>
+		<ion-col class="coil-size-length" [innerHtml]="coil.lengthRemainingFt | ftinch"></ion-col>
+	</ion-row>
+</ion-list>

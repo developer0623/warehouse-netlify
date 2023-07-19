@@ -1,0 +1,25 @@
+<ion-content>
+	<ion-icon name="close" class="close-icon" (click)="goback()"></ion-icon>
+	<div class="space"></div>
+	<div class="reason-header">
+		<img src="assets/taskicons/alert.png" />
+		Cannot Complete
+	</div>
+	<!-- <ion-row class="reason-header">
+		Nonpreferred Coil
+	</ion-row> -->
+	<ion-row class="reason-content">
+		You are about to flag this task as being impossible to complete.
+	</ion-row>
+	<ion-row class="reason-content">
+		Please choose a reason.
+	</ion-row>
+
+
+	<ion-list class="reason-list">
+		<ion-row *ngFor="let reason of unReasonList" (click)="onClickReason(reason)">
+			{{reason.reason}}
+		</ion-row>
+	</ion-list>
+
+</ion-content>

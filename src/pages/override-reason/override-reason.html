@@ -1,0 +1,22 @@
+<ion-content>
+	<ion-icon name="close" class="close-icon" (click)="goback()"></ion-icon>
+	<div class="space"></div>
+	<div class="reason-header">
+		<img src="assets/taskicons/error.png" />
+		Override Coil
+	</div>
+	<ion-row class="reason-content">
+		You have chosen a coil that is override.
+	</ion-row>
+	<ion-row class="reason-content">
+		Please select the reason you are doing this...
+	</ion-row>
+
+
+	<ion-list class="reason-list">
+		<ion-row *ngFor="let reason of overrideReasonList" (click)="onClickReason(reason)">
+			{{reason.reason}}
+		</ion-row>
+	</ion-list>
+
+</ion-content>

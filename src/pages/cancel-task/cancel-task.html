@@ -1,0 +1,24 @@
+<ion-content>
+	<ion-icon name="close" class="close-icon" (click)="goback()"></ion-icon>
+	<div class="space"></div>
+	<div class="reason-header">
+
+		Cancel Task
+	</div>
+	<!-- <ion-row class="reason-header">
+		Nonpreferred Coil
+	</ion-row> -->
+	<ion-row class="reason-content">
+		You have chosen to cancel this task.<br/>
+		Where are you placing the coil?
+	</ion-row>
+
+
+
+	<ion-list class="reason-list">
+		<ion-row *ngFor="let location of locations" (click)="onClickLocation(location)">
+			{{location.name}}
+		</ion-row>
+	</ion-list>
+
+</ion-content>

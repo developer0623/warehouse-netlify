@@ -1,0 +1,12 @@
+<div class="task-item">
+	<div class="sub-item1">
+		<img src="assets/taskicons/zone.png" />
+		{{source}}
+	</div>
+	<div class="arrow-sub-item"></div>
+	<div class="sub-item2">
+		<img src="assets/taskicons/machine.png" />
+		{{destination}}
+	</div>
+	<div class="sub-item3" [innerHtml]="task?.requiredDate | customTimeAgo"></div>
+</div>

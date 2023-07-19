@@ -1,0 +1,98 @@
+
+	.coil-content {
+		color: var(--ion-color-new-gray);
+		padding: 10px;
+		margin-bottom: 50px;
+		.main-title {
+			font-size: 13px !important;
+			font-weight: bold;
+		}
+		.coil-content-title {
+			font-size: 12px;
+			text-align: right;
+			padding-left: 0 !important;
+		}
+		.coil-content-content {
+			font-size: 17px;
+			span {
+				font-size: 14px;
+			}
+		}
+
+		.coil-content-img {
+			img {
+				width: 22px;
+				height: 22px;
+				margin-right: 5px;
+			}
+		}
+
+		.color-content {
+			max-width: 57%;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+
+		}
+
+		.coil-content-age {
+			border: 1px solid var(--ion-color-new-gray);
+			height: 40px;
+    		margin: auto;
+    		max-width: 41%;
+    		overflow: hidden;
+    		text-overflow: eclipse;
+    		white-space: nowrap;
+
+			.diff-v-class {
+				font-size: 2.5rem;
+				margin-left: 0.3rem;
+			}
+			.diff-sign {
+				font-size: 14px;
+				margin-left: 0.3rem;
+			}
+			.age-title {
+				vertical-align: super;
+				font-size: 13px;
+				margin-right: 0.3rem;
+			}
+		}
+
+		.coil-content-remain {
+
+			.coil-content-title {
+				background-color: rgba(107, 160, 190, 0.3);
+			}
+			.coil-content-content {
+				background-color: rgba(107, 160, 190, 0.3);
+			}
+
+		}
+
+		.ft-class, .inch-class {
+			font-size: 2.5rem !important;
+		}
+
+		.ft-sign, .inch-sign {
+			font-weight: 300;
+			font-size: 1.5rem !important;
+			margin: 0 4px;
+		}
+	}
+
+	.col-43 {
+		flex: 0 0 43%;
+	    width: 43%;
+	    max-width: 43%;
+	}
+
+
+	.errorField {
+		background-color: rgba(255, 0, 0, 0.2) !important;
+	}
+
+	.waringField {
+		background-color: rgba(225, 213, 55, 0.5) !important;
+	}
+

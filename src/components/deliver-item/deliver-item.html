@@ -1,0 +1,18 @@
+<div class="deliver-item">
+	<div class="sub-item1">
+		<img src="assets/taskicons/zone.png" />
+		{{item.location.name}}
+	</div>
+
+	<div class="sub-item2">
+		<img src="assets/taskicons/fill.png" />
+
+	</div>
+	<div class="sub-item5">
+		<p class="title">{{item.id}}</p>
+		<p>{{item.coilTypeCode}}</p>
+	</div>
+	<div class="sub-item3" [innerHtml]="item.lengthStartFt | ftinch2"></div>
+	<div class="sub-item4"></div>
+	<div class="arrow-sub-item"></div>
+</div>

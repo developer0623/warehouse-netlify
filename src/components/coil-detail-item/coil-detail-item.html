@@ -1,0 +1,63 @@
+<ion-list class="coil-content">
+
+
+		<ion-row>
+			<ion-col size="3" class="coil-content-title main-title" >COIL TYPE:</ion-col>
+			<ion-col size="auto" class="coil-content-content" [ngClass]="{'errorField': isErrorField('coilTypeCode'), 'waringField': isWarningField('coilTypeCode')}">{{selectedCoil.coilTypeCode}}</ion-col>
+		</ion-row>
+
+		<ion-row>
+			<ion-col size="7" no-padding>
+				<ion-row>
+					<ion-col class="coil-content-title col-43 main-title">MATERIAL:</ion-col>
+					<ion-col size="auto" class="coil-content-content" [ngClass]="{'errorField': isErrorField('materialType'), 'waringField': isWarningField('materialType')}">{{selectedCoil.materialType}}</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col class="coil-content-title col-43">COLOR:</ion-col>
+					<ion-col size="auto" class="coil-content-content color-content" [ngClass]="{'errorField': isErrorField('color'), 'waringField': isWarningField('color')}">{{selectedCoil.color}}</ion-col>
+
+				</ion-row>
+			</ion-col>
+
+			<ion-col size="auto" class="coil-content-age" [ngClass]="{'errorField': isErrorField('dateIn'), 'waringField': isWarningField('dateIn')}" [innerHtml]="selectedCoil.dateIn | coilage"></ion-col>
+
+		</ion-row>
+		<ion-row>
+			<ion-col size="3" class="coil-content-title">GAUGE:</ion-col>
+			<ion-col size="auto" class="coil-content-content" [ngClass]="{'errorField': isErrorField('gauge'), 'waringField': isWarningField('gauge')}">{{selectedCoil.gauge}}&nbsp;<span>G</span></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="3" class="coil-content-title">WIDTH:</ion-col>
+			<ion-col size="9" class="coil-content-content" [ngClass]="{'errorField': isErrorField('widthIn'), 'waringField': isWarningField('widthIn')}">{{selectedCoil.widthIn}}&nbsp;<span>IN</span></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="3" class="coil-content-title main-title">LENGTH:</ion-col>
+			<ion-col size="9" class="coil-content-content"></ion-col>
+		</ion-row>
+		<ion-row class="coil-content-remain">
+			<ion-col size="3" class="coil-content-title">REMAINING:</ion-col>
+			<ion-col size="auto" class="coil-content-content font-bold" [ngClass]="{'errorField': isErrorField('lengthRemainingFt'), 'waringField': isWarningField('lengthRemainingFt')}"  [innerHtml]="selectedCoil.lengthRemainingFt | ftinch2"></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="3" class="coil-content-title">ORIGINAL:</ion-col>
+			<!-- <ion-col size="9" class="coil-content-content">50<span>FT</span></ion-col> -->
+			<ion-col size="9" class="coil-content-content" [ngClass]="{'errorField': isErrorField('lengthStartFt'), 'waringField': isWarningField('lengthStartFt')}" [innerHtml]="selectedCoil.lengthStartFt | ftinch2"></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="3" class="coil-content-title main-title">VENDOR:</ion-col>
+			<ion-col size="9" class="coil-content-content" [ngClass]="{'errorField': isErrorField('vendor'), 'waringField': isWarningField('vendor')}">{{selectedCoil.vendor}}</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="3" class="coil-content-title">HEAT#:</ion-col>
+			<ion-col size="9" class="coil-content-content" [ngClass]="{'errorField': isErrorField('heat'), 'waringField': isWarningField('heat')}">{{selectedCoil.heat}}</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col size="3" class="coil-content-title main-title">LOCATION:</ion-col>
+			<ion-col size="auto" class="coil-content-img">
+				<img src="assets/taskicons/zone.png" />
+			</ion-col>
+			<ion-col col class="coil-content-content font-bold" [ngClass]="{'errorField': isErrorField('locationId'), 'waringField': isWarningField('locationId')}">{{selectedCoil.location.name}}</ion-col>
+		</ion-row>
+
+
+	</ion-list>

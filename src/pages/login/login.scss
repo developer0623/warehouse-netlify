@@ -1,0 +1,117 @@
+	.space {
+		width: 100%;
+		height: 50px;
+	}
+
+	.top-login {
+		display: block;
+		width: 100%;
+		text-align: center;
+
+		img {
+			width: 18vw;
+			max-width: 100px;
+		}
+
+		.login-title1 {
+			font-size: 25px;
+			letter-spacing: 2px;
+			margin-bottom: 0px;
+			color: var(--ion-color-new-gray);
+		}
+
+		.login-title2 {
+			font-size: 16px;
+			letter-spacing: 1px;
+			margin-bottom: 0px;
+			margin-top: 5px;
+			color: var(--ion-color-new-gray);
+		}
+
+		.login-title3 {
+			font-size: 18px;
+			margin-top: 40px;
+			margin-bottom: 0px;
+			color: #111;
+		}
+	}
+
+	.login-form {
+		width: 80%;
+		margin: 0px auto;
+
+		.input-item {
+			padding-left: 0px;
+      margin-top: 20px;
+      border-color: #dedede !important;
+      --highlight-color-valid: rgb(236, 177, 0);
+      &::part(native) {
+        padding-left: 0px;
+      }
+			ion-label {
+				color: var(--ion-color-new-gray) !important;
+				font-weight: bold;
+			}
+
+			.item-inner {
+				border-bottom: 1px solid #dedede !important;
+				box-shadow: none !important;
+			}
+		}
+
+		.form-bottom {
+			margin-top: 40px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+			ion-col {
+				padding: 0px;
+				ion-item {
+					padding-left: 0px;
+
+					.item-inner {
+						border-bottom: none;
+						// box-shadow: none !important;
+					}
+				}
+			}
+
+			.checkbox-item {
+        display: flex;
+        align-items: center;
+				ion-checkbox {
+					margin-right: 5px;
+          --background-checked: rgb(236, 177, 0);
+				}
+        ion-checkbox::part(container) {
+          border: 1px solid rgb(236, 177, 0);
+        }
+			}
+			.forgot-item {
+				text-align: right;
+        color: rgb(236, 177, 0);
+
+				.item-inner {
+					padding-right: 0px;
+					ion-label {
+						margin-right: 0px;
+						color: #EBD487;
+					}
+				}
+			}
+		}
+
+		.login-button {
+			width: 70%;
+			display: block;
+			margin: 10px auto;
+			padding: 10px;
+			background-color: var(--ion-color-new-main);
+			color: white;
+			border-radius: 5px;
+			font-size: 15px;
+		}
+	}
+
+

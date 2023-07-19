@@ -1,0 +1,189 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import './theme/colors.scss';
+
+:root {
+	--ion-color-new-gray: #999;
+	--ion-color-new-zone: #c7c7c7;
+	--ion-color-new-zone2: #d7d7d7;
+	--ion-color-new-main: #555;
+	--ion-color-new-title: #197198;
+}
+
+// .ion-color-new {
+// 	--ion-color-base: var(--ion-color-new);
+// 	--ion-color-base-rgb: var(--ion-color-new-rgb);
+// 	--ion-color-contrast: var(--ion-color-new-contrast);
+// 	--ion-color-contrast-rgb: var(--ion-color-new-contrast-rgb);
+// 	--ion-color-shade: var(--ion-color-new-shade);
+// 	--ion-color-tint: var(--ion-color-new-tint);
+// }
+
+.scan-coils-button {
+	position: fixed;
+	left: 0px;
+	bottom: 70px;
+	// width: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: var(--ion-color-new-main);
+	color: white;
+	width: 50px;
+	height: 50px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	img {
+		width: 23px;
+		height: 23px;
+	}
+}
+
+
+.browse-coils-button {
+	position: fixed;
+	left: 0px;
+	bottom: 130px;
+	// width: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: var(--ion-color-new-main);
+	color: white;
+	width: 50px;
+	height: 50px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+
+	.search-icon {
+		font-size: 30px;
+		// margin-bottom: 7px;
+	}
+
+	.search-title {
+		font-size: 10px;
+	}
+}
+
+.list-footer {
+	position: fixed;
+	bottom: 0px;
+	height: 60px;
+	background-color: #4A4A4A;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	color: white;
+}
+
+.main-back-icon {
+  margin-right: 0 !important;
+}
+
+.deliver-item-age {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  // color: rgb(208, 2, 27);
+  background: white;
+  // font-size: 60px;
+  margin-bottom: 20px;
+
+  .deliver-time-value {
+    font-size: 4rem;
+    // font-weight: bold;
+    .late-by {
+      color: #a31d21;
+      font-size: 2rem;
+      margin: 0 5px;
+      font-style: italic;
+    }
+    .red-color {
+      color: #a31d21;
+    }
+    .date-sign {
+      font-size: 2rem;
+      margin: 0 5px;
+      // font-weight: 300;
+    }
+  }
+
+  .deliver-item-state {
+    position: absolute;
+    right: 10vw;
+    bottom: 3vh;
+    font-size: 2.5rem;
+    color: rgba(0, 0, 0, 0.6);
+    font-style: italic;
+
+  }
+}
+.deliver-item {
+  .sub-item3 {
+    float: left;
+    height: 100%;
+    display: flex;
+    // width: 16%;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
+    background-color: #6aa0be;
+    .ft-class {
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.7);
+      margin: 0 2px;
+      font-style: italic;
+    }
+    .ft-sign {
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.4);
+      margin: 0 2px;
+    }
+
+    .inch-class {
+      margin-left: 5px;
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.7);
+      margin: 0 2px;
+      font-style: italic;
+    }
+    .inch-sign {
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.4);
+      margin: 0 2px;
+    }
+  }
+}
+

@@ -1,0 +1,113 @@
+<ion-header no-border>
+  <ion-toolbar hideBackButton>
+    <ion-buttons slot="start">
+      <ion-button (click)="goback()">
+        <ion-icon slot="start" size="large" name="chevron-back" class="main-back-icon"></ion-icon>
+        {{filterCount? 'Apply':"Back"}}
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Filter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-task-detail-header
+    [task]="seletedTask | async"
+    *ngIf="taskFlag"
+  ></app-task-detail-header>
+
+  <ion-row class="filter-header">
+    <ion-col class="filter-header-title">Filter Coils by:</ion-col>
+    <ion-col size="auto" class="filter-header-content" *ngIf="filterCount"
+      >{{filterCount}} Filters = {{itemCount}} Items</ion-col
+    >
+    <ion-col
+      size="auto"
+      class="filter-header-clear"
+      *ngIf="filterCount"
+      (click)="onClearFilter()"
+      >Clear All</ion-col
+    >
+  </ion-row>
+
+  <div class="filter-sort">
+    <ion-item (click)="onClickSort()">
+      <p class="filter-title">Sort by</p>
+      <p class="selected-filter-title">{{selectedSort.title}}</p>
+      <ion-icon name="arrow-down-outline" *ngIf="!sortFlag"></ion-icon>
+      <ion-icon name="arrow-up-outline" *ngIf="sortFlag"></ion-icon>
+    </ion-item>
+    <ion-list class="filter-item-list" *ngIf="sortFlag">
+      <div
+        class="filter-item"
+        *ngFor="let item of sortItems"
+        (click)="onClickSortItem(item)"
+      >
+        <img
+          src="assets/images/checked.png"
+          class="check-icon"
+          *ngIf="item.checked"
+        />
+        <img
+          src="assets/images/non-checked.png"
+          class="check-icon"
+          *ngIf="!item.checked"
+        />
+        {{item.title}}
+      </div>
+    </ion-list>
+  </div>
+  <div class="space"></div>
+
+  <ion-list class="main-filter-array">
+    <div
+      class="filter-item-group"
+      *ngFor="let filter of filters; let index = index;"
+    >
+      <ion-item detail="false" (click)="onClickFilter(filter)">
+        <ion-label>
+          <h3 class="filter-title">{{filter.facetTitle}}</h3>
+          <p
+            class="selected-filter-title"
+            *ngIf="selectedFilters[index]?.facetValues.length"
+          >
+            <span *ngFor="let item of selectedFilters[index].facetValues"
+              >{{item.title}},</span
+            >
+          </p>
+        </ion-label>
+        <ion-icon
+          name="arrow-down"
+          slot="end"
+          *ngIf="!filter.checked"
+        ></ion-icon>
+        <ion-icon
+          name="arrow-up"
+          slot="end"
+          *ngIf="filter.checked"
+        ></ion-icon>
+      </ion-item>
+      <ion-list class="filter-item-list" *ngIf="filter.checked">
+        <div
+          class="filter-item"
+          *ngFor="let item of filter.facetValues;"
+          (click)="onClickFilterItem(item, index)"
+        >
+          <img
+            src="assets/images/checked.png"
+            class="check-icon"
+            *ngIf="item.selected"
+          />
+          <img
+            src="assets/images/non-checked.png"
+            class="check-icon"
+            *ngIf="!item.selected"
+          />
+          <p class="item-title">{{item.title}}</p>
+          <span>{{item.resultCount}}</span>
+        </div>
+      </ion-list>
+    </div>
+  </ion-list>
+</ion-content>

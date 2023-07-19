@@ -1,0 +1,27 @@
+
+.progress-task {
+  text-align: center;
+  background-color: #dab126;
+  color: white;
+  font-size: 1.6rem;
+}
+
+.progress-task::part(native) {
+  background-color: #dab126;
+}
+.progress-task::part(detail-icon) {
+  color: white;
+  opacity: 1;
+  font-size: 20px;
+}
+
+.border-color {
+  border: 2px solid #dab126;
+}
+.item-list {
+
+  .list-item {
+    margin-bottom: 7px;
+  }
+}
+

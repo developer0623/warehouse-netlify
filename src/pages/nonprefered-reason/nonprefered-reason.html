@@ -1,0 +1,25 @@
+<ion-content>
+	<ion-icon name="close" class="close-icon" (click)="goback()"></ion-icon>
+	<div class="space"></div>
+	<div class="reason-header">
+		<img src="assets/taskicons/alert.png" />
+		Nonpreferred Coil
+	</div>
+	<!-- <ion-row class="reason-header">
+		Nonpreferred Coil
+	</ion-row> -->
+	<ion-row class="reason-content">
+		You have chosen a coil that is not preferred.
+	</ion-row>
+	<ion-row class="reason-content">
+		Please select the reason you are doing this...
+	</ion-row>
+
+
+	<ion-list class="reason-list">
+		<ion-row *ngFor="let reason of nonReasonList" (click)="onClickReason(reason)">
+			{{reason.reason}}
+		</ion-row>
+	</ion-list>
+
+</ion-content>
