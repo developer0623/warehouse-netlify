@@ -29,7 +29,7 @@ import { CoreModule } from '../core';
   bootstrap: [AppComponent],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    {provide: APP_BASE_HREF, useValue: '/app/warehouse'},
+    // {provide: APP_BASE_HREF, useValue: '/app/warehouse'},
     StatusBar,
     SplashScreen,
     BarcodeScanner
