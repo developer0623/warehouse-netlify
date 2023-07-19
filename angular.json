@@ -31,7 +31,6 @@
                 "output": "./svg"
               }
             ],
-            "baseHref": "./",
             "styles": ["src/theme/variables.scss", "src/global.scss"],
             "scripts": []
           },
